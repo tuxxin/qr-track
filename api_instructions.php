@@ -26,7 +26,6 @@ $apiUrl = BASE_URL . '/api.php';
         .doc-section { background: var(--card); padding: 25px; border-radius: 8px; border: 1px solid var(--border); }
         .console-section { background: #181818; padding: 25px; border-radius: 8px; border: 1px solid var(--border); position: sticky; top: 20px; height: fit-content; }
         
-        /* Alerts */
         .alert-danger { grid-column: 1 / -1; background: rgba(255, 68, 68, 0.1); border: 1px solid var(--danger); padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 20px; }
         .alert-danger h3 { color: var(--danger); margin-top: 0; }
         
@@ -62,7 +61,7 @@ $apiUrl = BASE_URL . '/api.php';
 
     <?php if ($isDefaultKey): ?>
     <div class="alert-danger">
-        <h3>---  API IS DISABLED  ---</h3>
+        <h3>⚠️ API IS DISABLED</h3>
         <p>You are using the default insecure API Key. For security, the API endpoint has been deactivated.</p>
         <p>Please use the generator below to create a new key, update your <code>config.php</code> file, and refresh this page.</p>
         
@@ -94,6 +93,27 @@ $apiUrl = BASE_URL . '/api.php';
         <h3>Global GET Endpoints</h3>
         <p><strong>List All:</strong> <code>GET /api.php</code></p>
         <p><strong>Get Single:</strong> <code>GET /api.php?uuid={uuid}</code></p>
+
+        <h2>3. PHP Example</h2>
+        <p>Use this cURL snippet in your PHP application:</p>
+        <pre>
+$ch = curl_init('<?= $apiUrl ?>');
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'X-Api-Key: <?= substr($apiKey, 0, 5) ?>...', 
+    'Content-Type: application/json'
+]);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
+    'title' => 'My Link',
+    'type' => 'url',
+    'target' => 'https://example.com'
+]));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($ch);
+$data = json_decode($response, true);
+curl_close($ch);
+</pre>
     </div>
 
     <div class="console-section">
