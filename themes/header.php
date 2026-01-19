@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= defined('PAGE_TITLE') ? PAGE_TITLE : 'Tuxxin QR Track' ?></title>
+	<link rel="icon" type="image/x-icon" href="tuxxin-qr-track.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300..900&display=swap" rel="stylesheet">
     <style>
