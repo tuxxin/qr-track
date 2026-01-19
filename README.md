@@ -67,3 +67,17 @@ Create, manage, and track QR codes for URLs, WiFi networks, vCards, and more—a
 
     Edit `.htaccess`:
     * Set `RewriteBase` to your root or sub-directory.
+  
+    ```bash
+    RewriteEngine On
+    RewriteBase /qr-track/
+    RewriteRule ^p/([a-zA-Z0-9]+)$ proxy.php?id=$1 [L,QSA]
+
+    <FilesMatch "\.(sqlite|db|log)$">
+       Order Deny,Allow
+       Deny from all
+    </FilesMatch>
+    <Files "config.php">
+       Order Deny,Allow
+       Deny from all
+    </Files>
