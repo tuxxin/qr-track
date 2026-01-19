@@ -44,7 +44,7 @@ Create, manage, and track QR codes for URLs, WiFi networks, vCards, and more—a
 
 1.  **Clone & Install Dependencies**
     ```bash
-    git clone https://github.com/tuxxin/tuxxin-qr-track.git
+    git clone https://github.com/tuxxin/qr-track.git
     cd tuxxin-qr-track
     composer install
     ```
