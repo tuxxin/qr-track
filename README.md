@@ -183,4 +183,4 @@ See the built-in **API Docs & Console** at `BASE_URL/api_instructions.php` for f
 
 ---
 
-*Built by [Tuxxin](https://tuxxin.com)*
+*Built by [Tuxxin](https://tuxxin.com)* | *Live Demo [QR-Track.Tuxxin.com](https://qr-track.tuxxin.com)*
